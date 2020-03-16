@@ -1,7 +1,7 @@
 ## Start project
 - Get api key from [Giphy Developer](https://developers.giphy.com/dashboard/)
 - Put on your api key to `.env`
-- install dependencies and start
+- Install dependencies and start
 ```
 $ npm install
 $ npm start
