@@ -6,4 +6,4 @@
 $ npm install
 $ npm start
 ```
-- visit [locahost:1234](http://localhost:1234)
+- Visit [locahost:1234](http://localhost:1234)
