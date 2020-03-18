@@ -58,7 +58,9 @@ const App = () => {
           ? "Loading..."
           : result.map(r => (
               <li key={r.id}>
-                <video src={r.mp4} autoPlay loop></video>
+                <a href={r.url} target="_blank">
+                  <video src={r.mp4} autoPlay loop></video>
+                </a>
               </li>
             ))}
       </ul>
