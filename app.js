@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
 
-const useGiphy = query => {
+const useGiphy = (query) => {
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -14,11 +14,11 @@ const useGiphy = query => {
         const response = await fetch(endpoint);
         const data = await response.json();
         setResult(
-          data.data.map(g => ({
+          data.data.map((g) => ({
             id: g.id,
             title: g.title,
             url: g.url,
-            mp4: g.images.original_mp4.mp4
+            mp4: g.images.original_mp4.mp4,
           }))
         );
         setLoading(false);
@@ -35,11 +35,11 @@ const App = () => {
   const [search, setSearch] = useState("good");
   const [query, setQuery] = useState("good");
   const [result, loading] = useGiphy(query);
-  const onKeywordChange = e => {
+  const onKeywordChange = (e) => {
     setSearch(e.target.value);
   };
 
-  const onFormSubmit = e => {
+  const onFormSubmit = (e) => {
     e.preventDefault();
     setQuery(search);
   };
@@ -56,7 +56,7 @@ const App = () => {
       <ul>
         {loading
           ? "Loading..."
-          : result.map(r => (
+          : result.map((r) => (
               <li key={r.id}>
                 <a href={r.url} target="_blank">
                   <video src={r.mp4} autoPlay loop></video>
